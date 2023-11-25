@@ -1,0 +1,65 @@
+div p{
+    /* background-color: olive; */
+}
+
+.container div p{
+    /* background-color: magenta; */
+}
+
+p + div { /*! p'den hemen sonra gelen div */
+    background-color: blueviolet;
+}
+div + p { /*! div'den hemen sonra gelen p */
+    /* background-color: orange; */
+}
+
+.container + p { /*! div'den hemen sonra gelen p */
+    background-color: gray;
+}
+
+h2[title="baslik1"]{
+    background-color: darkorchid;
+}
+
+p[title="paragraf1"]{
+    background-color: olive;
+}
+p[title="paragraf2"]::first-letter{
+    font-size: 30px;
+    background-color: red;
+}
+
+a[target="_blank"]{
+    background-color: gray;
+    font-size: 1.5rem;
+}
+
+.out{
+    border: 2px solid red;
+    width: 8rem;
+    height: 8rem;
+    font-size: 1rem;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 3rem;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.out:hover{
+    outline: 5px dashed purple;
+    cursor: pointer;
+    outline-offset: .5rem;
+}
+
+.cw{
+    border: 5px solid red;
+    width: 20rem;
+    margin: 50px auto;
+    text-align: center;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    outline: 10px outset purple;
+    outline-offset: 0.5rem;
+    background-color: orange;
+}

@@ -1,0 +1,125 @@
+.yazi{
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto;
+    width: 50vw;
+}
+
+/* ******** TRANSFORM-ROTATE ************ */
+/* rotate içinde ... degree (deg) olarak değer verilir */
+/* 90 ve 270 deerelecelerde yazılar tam dik olduklarından ve 
+    3 boyutlu olarak bakamadığımız için gözükmezler */
+
+
+.yazi1{
+    background-color: darkcyan;
+    transform: rotateX(180deg);
+}
+
+.yazi2{
+    background-color: cornflowerblue;
+    transform: rotateY(100deg);
+}
+
+
+.yazi3{
+    background-color: darkgoldenrod;
+    transform: rotate(30deg);
+    /* transform-origin: top; */
+}
+
+/* ******** TRANSFORM-SCALE ************ */
+/* scale boyutlandırma için kullanılır */
+
+.yazi4{
+    background-color: fuchsia;
+    transform: scaleX(1.5);
+}
+
+.yazi5{
+    background-color: seagreen;
+    transform: scaleY(1.5) skew(10deg, 10deg);
+}
+
+.yazi6{
+    background-color: gold;
+}
+.yazi6:active{
+    background-color: red;
+    transform: scale(2) rotate(40deg);
+}
+
+img{
+    width: 150px;
+    transform: skew(20deg, 20deg);
+}
+
+/* ************* -TRANSFORM- TRANSLATE ********* */
+/* Translate öteleme,hareket ettirmek için kullanılır. */
+
+.box{
+    background-color: crimson;
+    width: 100px;
+    height: 50px;
+    margin: 2px;
+}
+
+.x{
+    transform: translateX(0);
+    transition-property: transform;
+    transition-duration: 2s;
+    /* transition-delay: 1s; */
+    transition-timing-function: cubic-bezier(0, 2.15, 0.22, 1.86);
+}
+.x:active{
+    transform: translateX(350px);
+    background-color: yellowgreen;
+}
+
+.y{
+    background-color: olivedrab;
+    /* transform: translateY(150px); */
+    transition: all 2s ease-in-out;
+    
+}
+.y:active{
+    width: 300px;
+    height: 150px;
+    background-color: orange;
+}
+
+.xy{
+    background-color: magenta;
+    transition: all 2s ease-in-out;
+    
+}
+.xy:active{
+    background-color: magenta;
+    /* height: 100px; */
+    transform: translate(150px, 50px) scale(3);
+}
+
+.xy:active::after{
+    content: 'harvey';
+    display: block;
+}
+
+.btn-div{
+    text-align: center;
+}
+
+.btn{
+    background-color: aqua;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    transition: all .5s;
+
+}
+
+.btn:hover{
+    background-color: crimson;
+    color: white;
+    transform: scale(95%);
+}

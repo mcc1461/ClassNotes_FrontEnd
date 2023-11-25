@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Bitter:ital,wght@0,100;0,200;1,100&family=Caveat:wght@500;600&family=Montserrat+Alternates:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    /* padding: 0;
+    margin: 0; */
+    font-family: 'Montserrat Alternates', sans-serif;
+    /* font-family: 'Caveat', cursive; */
+}
+
+ul.languages{
+
+    /* Madde imi stilleri */
+    list-style-type: circle;
+    list-style-type: square ;
+    list-style-type: none;
+    list-style-type: lower-latin;
+    list-style-type: georgian;
+    list-style-type: disc;
+
+    /* Madde imi Li'lerin içindemi dışında mı olsun */
+    list-style-position: inside;
+    
+
+    list-style-image: url("./img/house-solid.svg");
+
+    font-family: 'Caveat', cursive;
+}
+
+ul.languages li {
+    background-color: lightgreen;
+    margin: 5px;
+    width: 250px;
+    border-radius: 10px;
+    padding-left: 20px;
+    border: 1px solid darkorange;
+    border-left: 5px solid gray;
+
+}
+
+ul.languages li:hover{
+    /* background-color: lightcoral; */
+    opacity: .5;
+    cursor: pointer;
+}
+
+h2{
+    color: blueviolet;
+}
+
+h2 i{
+    color: crimson;
+}
+
+.fa-money-bill-1{
+    color: red;
+    font-size: 30px;
+}
+
+  /*!----- PSEUDO CLASSES ------- */
+
+  ul.pseudo li:first-child{
+    color: red;
+  }
+  ul.pseudo li:last-child{
+    color: blue;
+    font-family: 'Bitter', serif;
+  }
+  ul.pseudo li:nth-child(3){
+    color: orangered;
+    background-color: crimson;
+  }
+  ul.pseudo li:nth-child(5){
+    font-size: 30px;
+    font-weight: 900;
+    font-family: 'Caveat', cursive;
+    font-weight: 500;
+  }
+  ul.pseudo li:nth-child(odd){
+   background-color: gray;
+  }
+  ul.pseudo li:nth-child(even){
+   background-color: lightsalmon;
+  }
+  
+  /* ul.pseudo li:not(odd){
+   background-color: red;
+  } */
+
+  /* ul.pseudo li{
+    transition: all 3s;
+   } */
+  ul.pseudo li:hover{
+    background-color: darkorchid;
+    color: orange;
+   }
+
+  ul.pseudo li:active{
+    background-color: black;
+    color: white;
+   }
+
+   /* input aktif hale geldiğinde  */
+   input:focus{
+    background-color: tomato;
+    color: white;
+    border: 4px dashed gray;
+    outline: none;
+   }
+
+     /*!----- LINK PSEUDO CLASSES ------- */
+
+     /* nav.link a{
+        color: fuchsia;
+        text-decoration: none;
+     }
+     nav.link a:hover{
+        color: blue;
+        text-decoration: underline;
+     } */
+
+
+     
+    nav.link a:link{
+        color: red;
+    }
+    nav.link a:visited{
+        color: magenta;
+    }
+    nav.link a:active{
+        color: lightseagreen;
+    }
+    nav.link a:hover{
+        color: rgb(142, 90, 6);
+    }
+
+    nav.cw a{
+        text-decoration: none;
+        border: 2px solid darkorange;
+        padding: 5px;
+        margin: 10px;
+        color: darkorange;
+        border-radius: 10px;
+    }
+
+    nav.cw a:hover{
+        background-color: gray;
+        color: white;
+    }
+
+    nav.cw a:hover i{
+        color: red;
+    }
+
+    nav.cw a i{
+        margin: 5px;
+        font-size: 1.1rem;
+        color: gray;
+    }
+
+    /* span{
+        background-color: rgba(128, 128, 128, 0.519);
+        margin: 10px;
+        margin-top: 50px;
+        display: inline;
+        height: 100px;
+        width: 100px;
+        padding: 20px; */
+    
+
+    /* #par{
+        background-color: brown;
+       
+        width: 100%;
+    } */
+
+      /*!----- PSEUDO ELEMENTS ------- */
+
+      .p-elements::first-line{
+        color: red;
+      }
+      .p-elements::first-letter{
+        font-size: 30px;
+      }
+
+      ul.before-after{
+        list-style-type: none;       
+      }
+
+      ul.before-after li{
+       margin: 0.5rem;
+       background-color: lightsalmon;
+        width: 40%;
+        border-radius: 10px;
+        /* text-align: center; */
+        transition: all 1s;
+       
+      }
+      ul.before-after li:hover{
+       background-color: skyblue;
+       
+      }
+      ul.before-after li::before{
+        content: '🦆';
+        margin: 10px;
+      }
+      ul.before-after li:nth-child(2){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+      }
+      ul.before-after li:nth-child(2)::before{
+        content: '\1F383';
+      }
+      ul.before-after li:nth-child(2)::after{
+        content: '🏁';
+        margin: 10px;
+        text-align: right;
+      }
+
+      ul.before-after li:last-child::after{
+        content: '🏎️';
+        margin: 10px;
+      }
+
+      ul.before-after li:nth-child(3):hover::after{
+        content: '🏴‍☠️';
+      }
+      ul.before-after li:nth-child(4):active::after{
+        content: '✅';
+      }
