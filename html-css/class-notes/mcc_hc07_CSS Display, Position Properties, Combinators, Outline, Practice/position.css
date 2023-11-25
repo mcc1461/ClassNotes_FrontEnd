@@ -1,0 +1,86 @@
+
+
+.main{
+    background-color: rgb(164, 168, 84);
+    width: 90%;
+    padding: 5px;
+    margin: 10px;
+    margin-top: 50px;
+    position: relative;
+    height: 2000px;
+}
+
+.box1{
+    background-color: rgba(0, 0, 255, 0.87);
+    width: 100px;
+    height: 100px;
+    position: relative;
+    z-index: 4;
+}
+.box2{
+    background-color: rgba(255, 0, 255, 0.837);
+    width: 100px;
+    height: 100px;
+    /* position: relative; */
+    /* top: 10px;
+    left: 20px; */
+    /* margin-top: 10px;
+    margin-left: 20px; */
+    position: relative;
+    top: -30px;
+    z-index: 3;
+
+}
+.box3{
+    background-color: rgba(68, 49, 11, 0.865);
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: -60px;
+    z-index: 5;
+
+
+
+}
+
+.box4{
+    background-color: rgba(181, 99, 36, 0.865);
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    height: 20px;
+    position: fixed;
+    left: 0px;
+    top: 0%;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.icerde{
+    background-color: yellow;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.paragraf2{
+    background-color: magenta;
+    padding: 10px;
+    border-radius: 20px;
+    position: sticky;
+    top: 120px;
+    z-index: 2;
+}
+
+.container{
+    border: 2px solid red;
+    padding: 20px;
+    height: 300px;
+}
