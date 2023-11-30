@@ -1,9 +1,11 @@
 import "./Button.css";
 import React from 'react'
 
-const Button = () => {
+const Button = ({name}) => {
   return (
-    <div>Button</div>
+    <div>
+      <button>{name}</button>
+    </div>
   )
 }
 
