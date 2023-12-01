@@ -1,10 +1,10 @@
-import "./Button.css";
+import "./button.css";
 import React from 'react'
 
 const Button = ({name}) => {
   return (
     <div>
-      <button>{name}</button>
+      <button className="btn-blue title">{name}</button>
     </div>
   )
 }

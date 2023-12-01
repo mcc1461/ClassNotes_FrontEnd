@@ -1,4 +1,4 @@
-import "./Card.css";
+import "./card.css";
 import data from "../../data";
 import Button from "../button/Button";
 
@@ -8,9 +8,9 @@ const Card = () => {
         {data.map(({id, language, img, btnName}) => {
             return (
                 <div key={id}>
-                    <h1>{language}</h1>
-                    <img src={img} alt="" />
-                    <Button name={btnName} />
+                    <h1 className="title">{language}</h1>
+                    <img className="images" src={img} alt="" />
+                    <Button name={btnName}></Button>
                 </div>
             )
         })}
