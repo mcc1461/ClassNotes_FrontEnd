@@ -13,7 +13,7 @@ const UseStateObject = () => {
   const { name, age, job } = person;
 
   const [toggle, setToggle] = useState(true);
-  //   let toggle = true;¨
+  //   let toggle = true;
   const handleSwap = () => {
     setToggle(!toggle);
     // toggle = !toggle;
