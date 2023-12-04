@@ -1,9 +1,17 @@
 //* ==================== HOOKS ===============================
-/* 
-Hook'lar fonksiyonel component'ler icerisinde state'leri kullanmamiza
+
+/* Hooks, React 16.8 ile birlikte gelen ve React componentlerinin
+state'lerini ve React'in diger ozelliklerini kullanimini saglayan 
+fonksiyonlardir.
+/* Hook'lar fonksiyonel component'ler icerisinde state'leri kullanmamiza
 olanak saglayan ozel fonksiyonlardir. React 16.8 versiyonu ile gelmistir ve geldikten sonra Class-componentler'in kullanimi cok azaltmistir.
 Message'ın console'da guncellendigini ancak DOM'da guncellenmedigini gorduk. 
 */
+
+//* ==================== useState() ===============================
+
+
+
 //* Bunun sebebi REACT'in aksi belirtilmedigi surece elementleri
 //* static olarak kabul etmesinden kaynaklanir.
 
@@ -55,6 +63,17 @@ import { useState } from 'react';
 
 const UseStateCounter = () => {
     const [count, setCount] = useState(10)
+    //write a function that will calculate a square root of a number
+    // const [count, setCount] = useState(() => {
+    //     console.log('useState() fonksiyonu calisti')
+    //     return 10
+    // })
+
+
+    
+
+
+
 
     const increment = () => {
         setCount(count + 1)
@@ -82,12 +101,14 @@ const UseStateCounter = () => {
             <button onClick={() => count > 0 && setCount(count - 1)}>DEC</button>
             <button onClick={reset}>CLR</button>
             <button onClick={complexIncrease}>INC2</button>
+
         </div>
     )
 
 }
 
 export default UseStateCounter
+
 
 
 
