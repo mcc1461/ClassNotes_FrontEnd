@@ -1,10 +1,9 @@
 //* ==================== HOOKS ===============================
-//! Hook'lar fonksiyonel component'ler icerisinde state'leri kullanmamiza
-//! olanak saglayan ozel fonksiyonlardir.
-//! React 16.8 versiyonu ile gelmistir ve geldikten sonra Class-componentler'in
-//! kullanimi cok azaltmistir.
-
-//! message console'da guncellendigini ancak DOM'da guncellenmedigini gorduk.
+/* 
+Hook'lar fonksiyonel component'ler icerisinde state'leri kullanmamiza
+olanak saglayan ozel fonksiyonlardir. React 16.8 versiyonu ile gelmistir ve geldikten sonra Class-componentler'in kullanimi cok azaltmistir.
+Message'ın console'da guncellendigini ancak DOM'da guncellenmedigini gorduk. 
+*/
 //* Bunun sebebi REACT'in aksi belirtilmedigi surece elementleri
 //* static olarak kabul etmesinden kaynaklanir.
 
