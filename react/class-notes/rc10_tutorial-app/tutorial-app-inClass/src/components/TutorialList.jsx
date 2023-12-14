@@ -1,24 +1,37 @@
 import { FaEdit } from "react-icons/fa"
 import { AiFillDelete } from "react-icons/ai"
+import axios from "axios"
+import React from "react"
+import "./TutorialModal"
 
-const TutorialList = () => {
-  const tutorials = [
-    {
-      id: 1,
-      title: "JS",
-      description: "JS is a programming language",
-    },
-    {
-      id: 2,
-      title: "React",
-      description: "JS library for UI design",
-    },
-    {
-      id: 3,
-      title: "Solid.JS",
-      description: "JS library xxxxxx",
-    },
-  ]
+const TutorialList = ({tutorials}) => {
+  // //* mock data
+  // const tutorials = [
+  //   {
+  //     id: 1,
+  //     title: "JS",
+  //     description: "JS is a programming language",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "React",
+  //     description: "JS library for UI design",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Solid.JS",
+  //     description: "JS library xxxxxx",
+  //   },
+  // ]
+  const deleteTutorial = async (id) => {
+    try {
+      const URL = `https://tutorial-api.fullstack.clarusway.com/tutorials/${id}`
+      const res = await axios.delete(URL)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
   return (
     <div className="container mt-4">
@@ -51,6 +64,7 @@ const TutorialList = () => {
                     size={22}
                     type="button"
                     className="text-danger "
+                    onClick={()=>deleteTutorial(id)}
                   />
                 </td>
               </tr>

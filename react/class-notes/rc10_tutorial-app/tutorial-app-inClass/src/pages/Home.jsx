@@ -7,11 +7,15 @@ import React, { useState } from "react";
   const Home = () => {
     const [tutorials, setTutorials] = useState([]);
 
-    const getTutorials = async () => {
-      const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials";
-      const res = await axios(URL);
-      setTutorials(res.data);
-      console.log(tutorials, res.data);
+    const getTutorials = async () => {     //^ axios ile API'den veri çekme işlemi
+      try {
+       
+        const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials";
+        const res = await axios(URL);
+        setTutorials(res.data);
+      } catch (err) {
+        console.log(err);
+      }
     };
     
     useEffect(() => {
@@ -22,8 +26,8 @@ import React, { useState } from "react";
 
   return (
     <div>
-      <AddTutorial />
-      <TutorialList />
+      <AddTutorial tutorials={tutorials}/>
+      <TutorialList tutorials={tutorials} />
     </div>
   );
 };
