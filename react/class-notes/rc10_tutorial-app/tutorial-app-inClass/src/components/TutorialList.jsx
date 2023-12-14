@@ -1,10 +1,12 @@
 import { FaEdit } from "react-icons/fa"
 import { AiFillDelete } from "react-icons/ai"
 import axios from "axios"
-import React from "react"
+import React, { useState } from "react"
 import "./TutorialModal"
 
-const TutorialList = ({tutorials}) => {
+const TutorialList = ({tutorials, getTutorials}) => {
+  const [editData, setEditData] = useState("");
+  
   // //* mock data
   // const tutorials = [
   //   {
