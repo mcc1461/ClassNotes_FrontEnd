@@ -1,24 +1,28 @@
-import { useState } from "react"
-import LifeCycleMethods from "./components/LifeCycleMethods"
-import UseEffectHook from "./components/UseEffectHook"
-import User from "./components/User"
-import UseEffect2 from "./components/UseEffect2"
+import React from 'react';
+import UseEffectLearn from './components/UseEffectLearn';
+import './App.css';
+
 
 function App() {
-  const [goster, setGoster] = useState(true)
+
   return (
-    <div className="container text-center mt-4">
-    {/* //   <button className="btn btn-danger" onClick={() => setGoster(!goster)}>
-    //     Gizle/Göster
-    //   </button> */}
 
-      {/* {goster && <LifeCycleMethods />} */}
+    <>
 
-      {/* {goster && <UseEffectHook />} */}
-      {/* {goster && <User />} */}
-      <UseEffect2 />
-    </div>
-  )
+  <h1 style={
+    {color:"red", padding:"20px", backgroundColor:"yellow", width:"200px"}
+  }>
+  mcc1461
+  </h1>
+  <div className="uel">
+
+  <UseEffectLearn />
+  </div>
+  
+  </>
+    )
 }
 
-export default App
+  
+
+export default App;
