@@ -1,6 +1,7 @@
 import React from 'react';
 import UseEffectLearn from './components/UseEffectLearn';
 import './App.css';
+import Merhaba from './components/UseState';
 
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
   <div className="uel">
 
   <UseEffectLearn />
+  
   </div>
+  <Merhaba />
   
   </>
     )
