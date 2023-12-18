@@ -10,11 +10,6 @@ function App() {
 
     <>
 
-  <h1 style={
-    {color:"red", padding:"20px", backgroundColor:"yellow", width:"200px"}
-  }>
-  mcc1461
-  </h1>
   <div className="uel">
 
   <UseEffectLearn />
@@ -22,9 +17,15 @@ function App() {
   </div>
   <Merhaba />
   
+  <h1 style={
+    {color:"red", padding:"20px", backgroundColor:"yellow", width:"200px"}
+  }>
+  mcc1461
+  </h1>
   </>
     )
 }
+
 
   
 
