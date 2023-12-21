@@ -1,4 +1,6 @@
-import { useState } from "react"
+import { useState } from "react";
+// Remove the unused import of 'tw'
+// import tw from "twin.macro";
 
 const AddTutorial = () => {
   const [title, setTitle] = useState("")
@@ -7,8 +9,8 @@ const AddTutorial = () => {
   const handleSubmit = (e) => {}
 
   return (
-    <div className="container text-center mt-4">
-      <h1 className="display-6 text-danger">Add Your Tutorial</h1>
+    <div className="p-2 rounded-md bg-violet-200">
+      <h1 className="text-2xl font-extrabold text-center text-red-900">Add Your Tutorial</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">
@@ -38,7 +40,7 @@ const AddTutorial = () => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-danger mb-4">
+        <button type="submit" className="mb-4 btn btn-danger">
           Submit
         </button>
       </form>
