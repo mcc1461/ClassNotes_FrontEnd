@@ -1,14 +1,14 @@
 {
-  "name": "rc10-tutorial-app",
+  "name": "rc13_context-example2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^5.2.2",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.12.0",
-    "react-scripts": "5.0.1",
-    "sass": "^1.69.5",
-    "styled-components": "^6.1.2"
+    "react-router-dom": "6.3",
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,10 +33,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.8.8",
-    "postcss": "^7.0.39",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }
