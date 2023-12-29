@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
 import { auth } from "../auth/firebase";
 import {
   GoogleAuthProvider,
@@ -13,6 +13,8 @@ import {
 import { useNavigate } from "react-router-dom";
 import { toastErrorNotify, toastSuccessNotify } from "../helpers/ToastNotify";
 
+// import { useCallback } from "react"; // Remove this duplicate import
+
 export const AuthContext = createContext();
 // const {Provider} = createContext()
 
@@ -25,14 +27,10 @@ const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    userObserver();
-  }, []);
-
-  const createUser = async (email, password, displayName) => {
+  const createUser = useCallback(async (email, password, displayName) => {
     try {
       //? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu
-      const userCredential = await createUserWithEmailAndPassword(
+      await createUserWithEmailAndPassword(
         auth,
         email,
         password
@@ -48,19 +46,15 @@ const AuthContextProvider = ({ children }) => {
       console.log(error);
       toastErrorNotify(error.message);
     }
-  };
+  }, [navigate]);
 
   //* https://console.firebase.google.com/
   //* => Authentication => sign-in-method => enable Email/password
   //! Email/password ile girişi enable yap
-  const signIn = async (email, password) => {
+  const signIn = useCallback(async (email, password) => {
     try {
       //? mevcut kullanıcının giriş yapması için kullanılan firebase metodu
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      await signInWithEmailAndPassword(auth, email, password);
       // console.log(userCredential);
       navigate("/");
       toastSuccessNotify("Logged in successfully!");
@@ -68,7 +62,7 @@ const AuthContextProvider = ({ children }) => {
       console.log(error);
       toastErrorNotify(error.message);
     }
-  };
+  }, [navigate]);
 
   const userObserver = () => {
     //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu
@@ -84,17 +78,17 @@ const AuthContextProvider = ({ children }) => {
     });
   };
 
-  const logOut = () => {
+  const logOut = useCallback(() => {
     signOut(auth);
     toastSuccessNotify("Logged out successfully");
-  };
+  }, []);
 
   //* https://console.firebase.google.com/
   //* => Authentication => sign-in-method => enable Google
   //! Google ile girişi enable yap
   //* => Authentication => settings => Authorized domains => add domain
   //! Projeyi deploy ettikten sonra google sign-in çalışması için domain listesine deploy linkini ekle
-  const signUpProvider = () => {
+  const signUpProvider = useCallback(() => {
     //? Google ile giriş yapılması için kullanılan firebase metodu
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
@@ -107,9 +101,9 @@ const AuthContextProvider = ({ children }) => {
         // Handle Errors here.
         console.log(error);
       });
-  };
+  }, [navigate]);
 
-  const forgotPassword = (email) => {
+  const forgotPassword = useCallback((email) => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
         // Password reset email sent!
@@ -118,16 +112,16 @@ const AuthContextProvider = ({ children }) => {
       .catch((error) => {
         toastErrorNotify(error.message);
       });
-  };
+  }, []);
 
-  const values = {
+  const values = React.useMemo(() => ({
     createUser,
     signIn,
     logOut,
     currentUser,
     signUpProvider,
     forgotPassword,
-  };
+  }), [createUser, signIn, logOut, currentUser, signUpProvider, forgotPassword]);
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
 
