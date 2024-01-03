@@ -1,7 +1,4 @@
 // import Typography from "./components/Typography";
-import HoverFocus from "./components/HoverFocus";
-import SpacingAndSizing from "./components/SpacingAndSizing";
-import FlexAndResponsive from "./components/FlexAndResponsive";
 import Navbar from "./components/Navbar";
 
 
