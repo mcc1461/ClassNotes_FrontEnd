@@ -1,12 +1,21 @@
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import { CardMedia } from "@mui/material";
+import Box from "@mui/material/Box"
+import Card from "@mui/material/Card"
+import CardActions from "@mui/material/CardActions"
+import CardContent from "@mui/material/CardContent"
+import Button from "@mui/material/Button"
+import Typography from "@mui/material/Typography"
+import { CardMedia } from "@mui/material"
+import { useEffect } from "react"
+import { getNewsData } from "../features/newApiSlice"
+import { useDispatch } from "react-redux"
 
 const News = () => {
+  const dispatch = useDispatch()
+  //? News componenenti DOM'a basildiktan hemen sonra API istegini baslat
+  useEffect(() => {
+    dispatch(getNewsData())
+  }, [])
+
   return (
     <>
       <h1>NEWS</h1>
@@ -43,7 +52,7 @@ const News = () => {
         ))}
       </Box>
     </>
-  );
-};
+  )
+}
 
-export default News;
+export default News
