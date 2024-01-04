@@ -1,5 +1,5 @@
 const initialState = {
-  count: 10,
+  count: 13,
 }
 
 //? type'ların CONSTANT olarak tanimlanmasi

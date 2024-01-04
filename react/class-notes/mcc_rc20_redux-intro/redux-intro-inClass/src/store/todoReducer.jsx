@@ -14,7 +14,9 @@ export const deleteTodo = (payload) => ({ type: DEL, payload })
 export const toggleTodo = (payload) => ({ type: TGL, payload })
 
 //? Reducer
-export const todoReducer = (state = initialState, { type, payload }) => {
+export const todoReducer = (state = initialState, action) => {
+  const { type, payload } = action;
+
   switch (type) {
     case ADD:
       return {
@@ -22,18 +24,18 @@ export const todoReducer = (state = initialState, { type, payload }) => {
           ...state.todoList,
           { id: new Date().getTime(), text: payload, completed: false },
         ],
-      }
+      };
 
     case CLR:
-      return initialState
+      return {};
 
     case DEL:
-      return {}
+      return {};
 
     case TGL:
-      return {}
+      return {};
 
     default:
-      return state
+      return initialState;
   }
-}
+};
