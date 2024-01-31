@@ -7,10 +7,12 @@ import Typography from "@mui/material/Typography"
 import { CardMedia } from "@mui/material"
 import { useEffect } from "react"
 import { getNewsData } from "../features/newApiSlice"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 const News = () => {
   const dispatch = useDispatch()
+  const { newsData } = useSelector((state) => state.newsApi)
+
   //? News componenenti DOM'a basildiktan hemen sonra API istegini baslat
   useEffect(() => {
     dispatch(getNewsData())
@@ -26,7 +28,7 @@ const News = () => {
         justifyContent="space-evenly"
         flexWrap="wrap"
       >
-        {[1, 2, 3].map((item, index) => (
+        {newsData?.map((item, index) => (
           <Card sx={{ maxWidth: 345, m: 5, maxHeight: 600 }} key={index}>
             <CardMedia
               component="img"

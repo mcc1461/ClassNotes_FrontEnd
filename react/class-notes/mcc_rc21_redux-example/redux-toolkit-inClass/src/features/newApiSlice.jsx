@@ -29,27 +29,21 @@ const newApiSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getNewsData.pending, (state) => {
-      state.loading = true
-    })
-    builder.addCase(getNewsData.fulfilled, (state, action) => {
-      state.newsData = action.payload
-      state.loading = false
-      state.error = false
-    })
-    builder.addCase(getNewsData.rejected, (state) => {
-      state.loading = false
-      state.error = true
-    })
-    builder.addMatcher(
-      (action) => action.type.match(/newsApi/),
-      (state, action) => {
-        console.log(action)
-      }
-    )
-  },  
+    builder
+      .addCase(getNewsData.pending, (state) => {
+        state.loading = true
+      })
+      .addCase(getNewsData.fulfilled, (state, action) => {
+        state.loading = false
+        state.newsData = action.payload
+      })
+      .addCase(getNewsData.rejected, (state) => {
+        state.loading = false
+        state.error = true
+      })
+  },
 })
 
-export const {} = newApiSlice.actions
+export const { clearNewsData } = newApiSlice.actions
 
 export default newApiSlice.reducer
