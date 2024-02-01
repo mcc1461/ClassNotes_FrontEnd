@@ -3,6 +3,8 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "/public/clarusway_logo2.png";
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard" },
@@ -36,9 +38,14 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
+                  {/* //? Next.js, import edilen dosyaya göre image genişliğini ve yüksekliğini otomatik olarak belirler ancak Next.js'nin build işlemi sırasında remote dosyalara erişimi olmadığından, genişlik ve yükseklik özelliklerini manuel olarak sağlamanız gerekir. */}
+                  {/* //* farklı domainlerden alınan image'ler için ilgili domainler config dosyasında belirtilmelidir. */}
+                  <Image
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    // src="https://clarusway.com/wp-content/uploads/2022/08/clarusway_925x1182-235x300.png"
+                    src={logo}
+                    // width={150}
+                    // height={50}
                     alt="Your Company"
                   />
                 </div>
